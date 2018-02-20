@@ -8,4 +8,5 @@
 5.  Run sudo apt update && sudo apt upgrade
 6.  Firefox will be broken afterwards so follow all of the instructions here to fix firefox: https://steemit.com/technology/@neuromancer/fix-crashing-firefox-after-update-on-linux-systems-by-downgrading-the-fast-and-simple-method
 7.  Next, follow this guide to enable to Raspberry Pi Camera: https://larrylisky.com/2016/11/24/enabling-raspberry-pi-camera-v2-under-ubuntu-mate/
-8.  Install ROS
+8.  Install ROS Kinetic following instructions here: http://wiki.ros.org/kinetic/Installation/Ubuntu
+9.  Install raspicam\_node following instructions here: https://github.com/UbiquityRobotics/raspicam_node

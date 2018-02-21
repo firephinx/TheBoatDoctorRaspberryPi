@@ -10,3 +10,12 @@
 7.  Next, follow this guide to enable to Raspberry Pi Camera: https://larrylisky.com/2016/11/24/enabling-raspberry-pi-camera-v2-under-ubuntu-mate/
 8.  Install ROS Kinetic following instructions here: http://wiki.ros.org/kinetic/Installation/Ubuntu
 9.  Install raspicam\_node following instructions here: https://github.com/UbiquityRobotics/raspicam_node
+10. Enable ssh on the raspberry pi using `raspi-config`
+11. Add the following lines to your ~/.bashrc
+```
+source /opt/ros/kinetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+export ROS_MASTER_URI="http://192.168.1.33:11311"
+export ROS_HOSTNAME="192.168.1.30"
+export ROS_IP="192.168.1.30"
+```

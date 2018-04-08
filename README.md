@@ -19,3 +19,23 @@ export ROS_MASTER_URI="http://192.168.1.33:11311"
 export ROS_HOSTNAME="192.168.1.30"
 export ROS_IP="192.168.1.30"
 ```
+
+## Startup Instructions:
+1. Press the robot's power button, which will turn on the Raspberry Pi and router automatically.
+2. Wait a minute or 2 for the Raspberry Pi to properly boot up.
+3. Connect your laptop to the router by connecting to The Boat Doctor wifi with password `TheBoatDoctor`.
+4. On your laptop, `ssh theboatdoctor-pi@192.168.1.30` and enter the password `TheBoatDoctor`.
+5. Then type vncserver in the client and note down the ip address that the vnc server is broadcasting on.
+6. Reconnect to CMU-SECURE and use the ip address that was displayed on VNCViewer. Enter `theboatdoctor-pi` as the username with the password `TheBoatDoctor`.
+
+## Uploading code to the Arduino
+1. Type `sudo chmod a+rw /dev/ttyACM0` in the terminal and enter the password `TheBoatDoctor`.
+2. Then on the top left corner of the screen, select Applications > Programming > Arduino IDE
+3. An error message will pop up on screen, but just press `Add`.
+4. When the Arduino IDE window opens, if you have trouble seeing the entire window, go to the bottom of the VNC window and right click the Arduino window and select `Always on top`.
+5. Now go to the top left corner of the window and select File > Open or `Ctrl-O` and find the "TheBoatDoctorArduino.ino" which should be located in the home/theboatdoctor-pi/Documents/TheBoatDoctorArduino folder.
+6. Make sure that Tools > Board has the Arduino Mega 2560 or Mega ADK selected and Tools > Serial Port has /dev/ttyACM0 selected.
+7. Click the Upload button and wait for the entire program to be compiled and uploaded to the Arduino Mega.
+
+## Issues accessing the Internet
+1. Disconnect from the Intranet (the ethernet connection) if you encounter troubles with accessing the internet.

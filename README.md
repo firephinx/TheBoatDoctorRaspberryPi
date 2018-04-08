@@ -11,21 +11,22 @@
 8.  Install ROS Kinetic following instructions here: http://wiki.ros.org/kinetic/Installation/Ubuntu
 9.  Install raspicam\_node following instructions here: https://github.com/UbiquityRobotics/raspicam_node
 10. Enable ssh on the raspberry pi using `raspi-config`
-11. Add the following lines to your ~/.bashrc
+11. Download and install VNCserver from here: https://www.realvnc.com/en/connect/download/vnc/raspberrypi/
+12. Add the following lines to your ~/.bashrc
 ```
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 export ROS_MASTER_URI="http://192.168.1.33:11311"
 export ROS_HOSTNAME="192.168.1.30"
 export ROS_IP="192.168.1.30"
-```
+``` 
 
 ## Startup Instructions:
 1. Press the robot's power button, which will turn on the Raspberry Pi and router automatically.
 2. Wait a minute or 2 for the Raspberry Pi to properly boot up.
 3. Connect your laptop to the router by connecting to The Boat Doctor wifi with password `TheBoatDoctor`.
 4. On your laptop, `ssh theboatdoctor-pi@192.168.1.30` and enter the password `TheBoatDoctor`.
-5. Then type vncserver in the client and note down the ip address that the vnc server is broadcasting on.
+5. Then type `vncserver` in the terminal and note down the ip address that the vnc server is broadcasting on.
 6. Reconnect to CMU-SECURE and use the ip address that was displayed on VNCViewer. Enter `theboatdoctor-pi` as the username with the password `TheBoatDoctor`.
 
 ## Uploading code to the Arduino

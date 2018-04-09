@@ -10,9 +10,10 @@
 7.  Next, follow this guide to enable to Raspberry Pi Camera: https://larrylisky.com/2016/11/24/enabling-raspberry-pi-camera-v2-under-ubuntu-mate/
 8.  Install ROS Kinetic following instructions here: http://wiki.ros.org/kinetic/Installation/Ubuntu
 9.  Install raspicam\_node following instructions here: https://github.com/UbiquityRobotics/raspicam_node
-10. Enable ssh on the raspberry pi using `raspi-config`
-11. Download and install VNCserver from here: https://www.realvnc.com/en/connect/download/vnc/raspberrypi/
-12. Add the following lines to your ~/.bashrc
+10. Add `192.168.1.33 theboatdoctor-nuc` to the `/etc/hosts` file. 
+11. Enable ssh on the raspberry pi using `raspi-config`
+12. Download and install VNCserver from here: https://www.realvnc.com/en/connect/download/vnc/raspberrypi/
+13. Add the following lines to your ~/.bashrc
 ```
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
@@ -20,9 +21,10 @@ export ROS_MASTER_URI="http://192.168.1.33:11311"
 export ROS_HOSTNAME="192.168.1.30"
 export ROS_IP="192.168.1.30"
 ``` 
-13. Install rosserial library following instructions here: http://wiki.ros.org/rosserial_arduino/Tutorials
+14. Install rosserial library following instructions here: http://wiki.ros.org/rosserial_arduino/Tutorials
+15. Clone the SparkFun LSM9DS1 Arduino Library into the Arduino sketchbook's libraries folder using `git clone https://github.com/sparkfun/SparkFun_LSM9DS1_Arduino_Library.git`. Then copy all of the files from the src folder into the main folder and delete the src folder.
 
-## Startup Instructions:
+## VNC Instructions:
 1. Press the robot's power button, which will turn on the Raspberry Pi and router automatically.
 2. Wait a minute or 2 for the Raspberry Pi to properly boot up.
 3. Connect your computer to the router by connecting to The Boat Doctor wifi with password `TheBoatDoctor`.
@@ -30,8 +32,8 @@ export ROS_IP="192.168.1.30"
 5. Then type `vncserver` in the ssh terminal and note down the ip address that the vnc server is broadcasting on.
 6. Reconnect to CMU-SECURE, open up VNC Viewer and enter the ip address that was displayed in the ssh terminal. Enter `theboatdoctor-pi` as the username with the password `TheBoatDoctor`.
 
-## Uploading code to the Arduino
-1. Type `sudo chmod a+rw /dev/ttyACM0` in the terminal and enter the password `TheBoatDoctor`.
+## Uploading code to the Arduino using the VNC
+1. Type `sudo chmod a+rw /dev/ttyACM0` or `chmodmega` in the terminal and enter the password `TheBoatDoctor`.
 2. Then on the top left corner of the screen, select Applications > Programming > Arduino IDE
 3. An error message will pop up on screen, but just press `Add`.
 4. When the Arduino IDE window opens, if you have trouble seeing the entire window, go to the bottom of the VNC window and right click the Arduino window and select `Always on top`.

@@ -42,4 +42,4 @@ export ROS_IP="192.168.1.30"
 7. Click the Upload button and wait for the entire program to be compiled and uploaded to the Arduino Mega.
 
 ## Issues accessing the Internet
-1. Disconnect from the Intranet (the ethernet connection) if you encounter troubles with accessing the internet.
+1. Disconnect from TheBoatDoctorEthernet if you encounter any trouble with accessing the internet.
